@@ -31,7 +31,7 @@ class MyUsersTable extends UsersTable
     {
         parent::initialize($config);
 
-        $this->addBehavior('Acl.Acl', ['controlled']);
+        $this->addBehavior('Acl.Acl', ['requester']);
     }
 
 }
