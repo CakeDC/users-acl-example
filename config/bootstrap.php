@@ -215,6 +215,7 @@ if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
 
+Configure::write('Users.config', ['users']);
 Plugin::load('CakeDC/Users', ['bootstrap' => true, 'routes' => true]);
 
 Plugin::load('Acl', ['bootstrap' => true]);
