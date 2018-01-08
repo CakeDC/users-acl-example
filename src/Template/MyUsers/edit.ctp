@@ -49,6 +49,9 @@ $Users = ${$tableAlias};
         echo $this->Form->control('tos_date', [
             'label' => __d('CakeDC/Users', 'TOS date')
         ]);
+        echo $this->Form->control('roles._ids', [
+            'options' => $roles
+        ]);
         echo $this->Form->control('active', [
             'label' => __d('CakeDC/Users', 'Active')
         ]);

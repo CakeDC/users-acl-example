@@ -25,6 +25,7 @@
             echo $this->Form->control('password', ['label' => __d('CakeDC/Users', 'Password')]);
             echo $this->Form->control('first_name', ['label' => __d('CakeDC/Users', 'First name')]);
             echo $this->Form->control('last_name', ['label' => __d('CakeDC/Users', 'Last name')]);
+            echo $this->Form->control('roles._ids', ['options' => $roles]);
             echo $this->Form->control('active', [
                 'type' => 'checkbox',
                 'label' => __d('CakeDC/Users', 'Active')
