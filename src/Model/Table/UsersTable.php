@@ -1,10 +1,7 @@
 <?php
 namespace App\Model\Table;
 
-use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
-use Cake\ORM\Table;
-use Cake\Validation\Validator;
+use CakeDC\Users\Model\Table\UsersTable;
 
 /**
  * Users Model
@@ -21,7 +18,7 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class UsersTable extends Table
+class UsersTable extends CakeDC\Users\Model\Table\UsersTable
 {
 
     /**
@@ -34,116 +31,7 @@ class UsersTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('users');
-        $this->setDisplayField('username');
-        $this->setPrimaryKey('id');
-
-        $this->addBehavior('Timestamp');
-
-        $this->hasMany('SocialAccounts', [
-            'foreignKey' => 'user_id'
-        ]);
+        $this->addBehavior('Acl.Acl', ['controlled']);
     }
 
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->uuid('id')
-            ->allowEmpty('id', 'create');
-
-        $validator
-            ->scalar('username')
-            ->maxLength('username', 255)
-            ->requirePresence('username', 'create')
-            ->notEmpty('username');
-
-        $validator
-            ->email('email')
-            ->allowEmpty('email');
-
-        $validator
-            ->scalar('password')
-            ->maxLength('password', 255)
-            ->requirePresence('password', 'create')
-            ->notEmpty('password');
-
-        $validator
-            ->scalar('first_name')
-            ->maxLength('first_name', 50)
-            ->allowEmpty('first_name');
-
-        $validator
-            ->scalar('last_name')
-            ->maxLength('last_name', 50)
-            ->allowEmpty('last_name');
-
-        $validator
-            ->scalar('token')
-            ->maxLength('token', 255)
-            ->allowEmpty('token');
-
-        $validator
-            ->dateTime('token_expires')
-            ->allowEmpty('token_expires');
-
-        $validator
-            ->scalar('api_token')
-            ->maxLength('api_token', 255)
-            ->allowEmpty('api_token');
-
-        $validator
-            ->dateTime('activation_date')
-            ->allowEmpty('activation_date');
-
-        $validator
-            ->scalar('secret')
-            ->maxLength('secret', 32)
-            ->allowEmpty('secret');
-
-        $validator
-            ->boolean('secret_verified')
-            ->allowEmpty('secret_verified');
-
-        $validator
-            ->dateTime('tos_date')
-            ->allowEmpty('tos_date');
-
-        $validator
-            ->boolean('active')
-            ->requirePresence('active', 'create')
-            ->notEmpty('active');
-
-        $validator
-            ->boolean('is_superuser')
-            ->requirePresence('is_superuser', 'create')
-            ->notEmpty('is_superuser');
-
-        $validator
-            ->scalar('role')
-            ->maxLength('role', 255)
-            ->allowEmpty('role');
-
-        return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->isUnique(['username']));
-        $rules->add($rules->isUnique(['email']));
-
-        return $rules;
-    }
 }
