@@ -32,6 +32,12 @@ class MyUsersTable extends UsersTable
         parent::initialize($config);
 
         $this->addBehavior('Acl.Acl', ['requester']);
+        
+        $this->belongsToMany('Roles', [
+            'foreignKey' => 'user_id',
+            'targetForeignKey' => 'role_id',
+            'joinTable' => 'roles_users'
+        ]);
     }
 
 }
