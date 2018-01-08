@@ -39,6 +39,7 @@ class ArticlesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Acl.Acl', ['controlled']);
 
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',

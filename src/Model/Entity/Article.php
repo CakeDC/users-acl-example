@@ -37,4 +37,8 @@ class Article extends Entity
         'modified' => true,
         'user' => true
     ];
+    
+    public function parentNode() {
+        return null;
+    }
 }
