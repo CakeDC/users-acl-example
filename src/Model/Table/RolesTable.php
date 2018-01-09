@@ -39,6 +39,7 @@ class RolesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Acl.Acl', ['controlled']);
 
         $this->belongsToMany('Users', [
             'foreignKey' => 'role_id',
