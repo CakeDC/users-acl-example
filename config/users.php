@@ -144,7 +144,6 @@ $config = [
         'authorize' => [
             'CakeDC/Auth.Superuser',
             'Acl.Actions',
-            'Acl.Crud',
         ],
     ],
     'OAuth' => [
