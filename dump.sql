@@ -38,7 +38,7 @@ CREATE TABLE `acl_phinxlog` (
 
 LOCK TABLES `acl_phinxlog` WRITE;
 /*!40000 ALTER TABLE `acl_phinxlog` DISABLE KEYS */;
-INSERT INTO `acl_phinxlog` VALUES (20141229162641,'CakePhpDbAcl','2018-01-08 17:19:32','2018-01-08 17:19:32',0);
+INSERT INTO `acl_phinxlog` VALUES (20141229162641,'CakePhpDbAcl','2018-01-12 10:38:11','2018-01-12 10:38:11',0);
 /*!40000 ALTER TABLE `acl_phinxlog` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +60,7 @@ CREATE TABLE `acos` (
   PRIMARY KEY (`id`),
   KEY `lft` (`lft`,`rght`),
   KEY `alias` (`alias`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `acos` (
 
 LOCK TABLES `acos` WRITE;
 /*!40000 ALTER TABLE `acos` DISABLE KEYS */;
-INSERT INTO `acos` VALUES (4,NULL,NULL,NULL,'Articles',1,4),(5,4,NULL,NULL,'Articles/add',2,3),(7,NULL,'Articles',1,NULL,5,6),(8,NULL,'Articles',2,NULL,7,8),(9,NULL,'Articles',3,NULL,9,10),(10,NULL,'Articles',4,NULL,11,12);
+INSERT INTO `acos` VALUES (1,NULL,NULL,NULL,'controllers',1,6),(2,1,NULL,NULL,'Articles',2,5),(3,2,NULL,NULL,'add',3,4);
 /*!40000 ALTER TABLE `acos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +91,7 @@ CREATE TABLE `aros` (
   PRIMARY KEY (`id`),
   KEY `lft` (`lft`,`rght`),
   KEY `alias` (`alias`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +100,7 @@ CREATE TABLE `aros` (
 
 LOCK TABLES `aros` WRITE;
 /*!40000 ALTER TABLE `aros` DISABLE KEYS */;
-INSERT INTO `aros` VALUES (1,NULL,'MyUsers','0966b253-9f0f-4ab1-873f-5e9f92cb9a5e',NULL,1,2),(2,NULL,'MyUsers','c35ee1bd-8fc2-496f-a42e-22dc941b6430',NULL,3,4),(3,NULL,'MyUsers','c21cd2ff-14c5-471a-9491-07c4d3fa7916',NULL,5,6),(6,NULL,'Roles','ec1757ad-546a-4d53-9b7d-be228b6320f0',NULL,7,8),(7,NULL,'Roles','b709069d-da9f-4e1f-ad33-9c7f6f9cadc4',NULL,9,10),(8,NULL,'Roles','56ee7fd8-7dfc-4276-8f3e-f37ad097b5ca',NULL,11,12);
+INSERT INTO `aros` VALUES (1,NULL,'MyUsers','d472d6a1-6abb-4405-879c-137975eca7cc',NULL,1,2),(2,NULL,'MyUsers','6319d954-9a45-4659-b0f5-29acdca1bd8b',NULL,3,4);
 /*!40000 ALTER TABLE `aros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +122,7 @@ CREATE TABLE `aros_acos` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `aro_id` (`aro_id`,`aco_id`),
   KEY `aco_id` (`aco_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +131,7 @@ CREATE TABLE `aros_acos` (
 
 LOCK TABLES `aros_acos` WRITE;
 /*!40000 ALTER TABLE `aros_acos` DISABLE KEYS */;
-INSERT INTO `aros_acos` VALUES (1,6,5,'1','1','1','1'),(2,2,5,'1','1','1','1'),(3,2,4,'1','1','1','1'),(4,6,4,'1','1','1','1');
+INSERT INTO `aros_acos` VALUES (1,2,1,'1','1','1','1'),(2,2,2,'1','1','1','1'),(3,2,3,'1','1','1','1');
 /*!40000 ALTER TABLE `aros_acos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -319,7 +319,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('0966b253-9f0f-4ab1-873f-5e9f92cb9a5e','superadmin','superadmin@example.com','$2y$10$gc.jyeOZDxTBR7cyFLEkt.dcGSmDD0CS2JKrCdlYqZRYzF/aYjOAC',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,'superuser','2018-01-08 17:42:49','2018-01-08 17:42:49'),('c21cd2ff-14c5-471a-9491-07c4d3fa7916','bernard','bernard@roger.pro','$2y$10$CqzqoRN6.QFRdYms8s0t1eCsHquoHlzCUCeh.jHwtLyBZe2TvHkC6','Bernard','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-08 17:46:08','2018-01-08 17:46:08'),('c35ee1bd-8fc2-496f-a42e-22dc941b6430','alba','alba@roger.pro','$2y$10$prTipgHAw2u4Z7TVSyTbpeKKaM6eWLM92ZOLclZABxDtMby5JqWa2','Alba','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-08 17:45:48','2018-01-08 17:45:48');
+INSERT INTO `users` VALUES ('0966b253-9f0f-4ab1-873f-5e9f92cb9a5e','superadmin','superadmin@example.com','$2y$10$gc.jyeOZDxTBR7cyFLEkt.dcGSmDD0CS2JKrCdlYqZRYzF/aYjOAC',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,'superuser','2018-01-08 17:42:49','2018-01-08 17:42:49'),('12917f65-cc04-4d0c-ba26-55a8236abc9d','france','france@fds.ca','$2y$10$pZIe2wqFv2be.FdyB7xW1uP63v.oSKcWlxjXtqEqafuLb29.xbsMi','france','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-12 10:35:50','2018-01-12 10:35:50'),('6319d954-9a45-4659-b0f5-29acdca1bd8b','isabel','isabel@i.ii','$2y$10$1kkuYHjHGn1QIzUEB7F5heeVqcl.DEvNSSJ8pmQ6BNvC0ZgOr5Pmi','Isabel','Islandia',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-12 11:18:40','2018-01-12 11:18:40'),('64087ce1-c64b-488e-b04e-3aabd8de743d','donald','donald@roger.pro','$2y$10$uJ6Ls7KSGnO.hPXSxn2U/.1.8M6dXT5y/d0oL0.YLgXe6xX1TIjzC','Donald','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-12 10:26:23','2018-01-12 10:26:23'),('68ee344e-ee3d-4e8f-bc19-ebefa1aaa615','charles','charles@roger.pro','$2y$10$u2.AT4arQ1FdzjhEX7hEp.HrP6DMTch2Y9rquSdevAadLGSLvVxqK','Charles','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-12 10:25:00','2018-01-12 10:25:00'),('bf72b4dc-0a5b-4005-8cc6-b5d7923ef891','ggg','ggg@ggg.gg','$2y$10$y66c7BDWA5CqWf6EX.jCwuSGxms7rc6ZlqRI8S0dTLXRzpYVjb0aG','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-12 10:37:12','2018-01-12 10:37:12'),('c21cd2ff-14c5-471a-9491-07c4d3fa7916','bernard','bernard@roger.pro','$2y$10$CqzqoRN6.QFRdYms8s0t1eCsHquoHlzCUCeh.jHwtLyBZe2TvHkC6','Bernard','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-08 17:46:08','2018-01-08 17:46:08'),('c35ee1bd-8fc2-496f-a42e-22dc941b6430','alba','alba@roger.pro','$2y$10$prTipgHAw2u4Z7TVSyTbpeKKaM6eWLM92ZOLclZABxDtMby5JqWa2','Alba','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-08 17:45:48','2018-01-08 17:45:48'),('d472d6a1-6abb-4405-879c-137975eca7cc','hil','hil@h.hh','$2y$10$v.IOAR0qljI7IZ1bfvmErOSfrcaJAmjyh87mvKcF.giw7p/S0fsuO','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-12 10:40:33','2018-01-12 10:40:33'),('faf21613-c3bc-401e-9cdc-7ea5f7a35ce1','elba','elba@elba.aa','$2y$10$gV2tlBDkPELZ9rA5HPh3wecXb24B1.PYljMlKjlzgA766fkXkXPbq','Elba','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-12 10:33:53','2018-01-12 10:33:53');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -332,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-10 12:26:41
+-- Dump completed on 2018-01-12 12:46:01
