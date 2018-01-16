@@ -25,8 +25,7 @@ class RolesTableTest extends TestCase
      */
     public $fixtures = [
         'app.roles',
-        'app.users',
-        'app.roles_users'
+        'app.users'
     ];
 
     /**

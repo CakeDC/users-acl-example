@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Articles Model
  *
- * @property \App\Model\Table\MyUsersTable|\Cake\ORM\Association\BelongsTo $Users
+ * @property \CakeDC\Users\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  *
  * @method \App\Model\Entity\Article get($primaryKey, $options = [])
  * @method \App\Model\Entity\Article newEntity($data = null, array $options = [])

@@ -1,37 +1,45 @@
 <?php
 /**
- * Copyright 2010 - 2017, Cake Development Corporation (https://www.cakedc.com)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright Copyright 2010 - 2017, Cake Development Corporation (https://www.cakedc.com)
- * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\MyUser $myUser
  */
 ?>
-<div class="actions columns large-2 medium-3">
-    <h3><?= __d('CakeDC/Users', 'Actions') ?></h3>
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li><?= $this->Html->link(__d('CakeDC/Users', 'List Users'), ['action' => 'index']) ?></li>
+        <li class="heading"><?= __('Actions') ?></li>
+        <li><?= $this->Html->link(__('List My Users'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Social Accounts'), ['controller' => 'SocialAccounts', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Social Account'), ['controller' => 'SocialAccounts', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Aro'), ['controller' => 'Aros', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Aro'), ['controller' => 'Aros', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Articles'), ['controller' => 'Articles', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Article'), ['controller' => 'Articles', 'action' => 'add']) ?></li>
     </ul>
-</div>
-<div class="users form large-10 medium-9 columns">
-    <?= $this->Form->create(${$tableAlias}); ?>
+</nav>
+<div class="myUsers form large-9 medium-8 columns content">
+    <?= $this->Form->create($myUser) ?>
     <fieldset>
-        <legend><?= __d('CakeDC/Users', 'Add User') ?></legend>
+        <legend><?= __('Add My User') ?></legend>
         <?php
-            echo $this->Form->control('username', ['label' => __d('CakeDC/Users', 'Username')]);
-            echo $this->Form->control('email', ['label' => __d('CakeDC/Users', 'Email')]);
-            echo $this->Form->control('password', ['label' => __d('CakeDC/Users', 'Password')]);
-            echo $this->Form->control('first_name', ['label' => __d('CakeDC/Users', 'First name')]);
-            echo $this->Form->control('last_name', ['label' => __d('CakeDC/Users', 'Last name')]);
-            echo $this->Form->control('roles._ids', ['options' => $roles]);
-            echo $this->Form->control('active', [
-                'type' => 'checkbox',
-                'label' => __d('CakeDC/Users', 'Active')
-            ]);
+            echo $this->Form->control('username');
+            echo $this->Form->control('email');
+            echo $this->Form->control('password');
+            echo $this->Form->control('first_name');
+            echo $this->Form->control('last_name');
+            echo $this->Form->control('token');
+            echo $this->Form->control('token_expires', ['empty' => true]);
+            echo $this->Form->control('api_token');
+            echo $this->Form->control('activation_date', ['empty' => true]);
+            echo $this->Form->control('secret');
+            echo $this->Form->control('secret_verified');
+            echo $this->Form->control('tos_date', ['empty' => true]);
+            echo $this->Form->control('active');
+            echo $this->Form->control('is_superuser');
+            echo $this->Form->control('role_id', ['options' => $roles, 'empty' => true]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__d('CakeDC/Users', 'Submit')) ?>
+    <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>

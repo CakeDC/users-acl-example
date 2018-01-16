@@ -38,7 +38,7 @@ CREATE TABLE `acl_phinxlog` (
 
 LOCK TABLES `acl_phinxlog` WRITE;
 /*!40000 ALTER TABLE `acl_phinxlog` DISABLE KEYS */;
-INSERT INTO `acl_phinxlog` VALUES (20141229162641,'CakePhpDbAcl','2018-01-12 16:33:57','2018-01-12 16:33:57',0);
+INSERT INTO `acl_phinxlog` VALUES (20141229162641,'CakePhpDbAcl','2018-01-16 16:56:43','2018-01-16 16:56:43',0);
 /*!40000 ALTER TABLE `acl_phinxlog` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +60,7 @@ CREATE TABLE `acos` (
   PRIMARY KEY (`id`),
   KEY `lft` (`lft`,`rght`),
   KEY `alias` (`alias`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `acos` (
 
 LOCK TABLES `acos` WRITE;
 /*!40000 ALTER TABLE `acos` DISABLE KEYS */;
-INSERT INTO `acos` VALUES (1,NULL,NULL,NULL,'controllers',1,6),(2,1,NULL,NULL,'Articles',2,5),(3,2,NULL,NULL,'add',3,4);
+INSERT INTO `acos` VALUES (1,NULL,NULL,NULL,'controllers',1,14),(2,1,NULL,NULL,'Articles',2,13),(3,2,NULL,NULL,'index',3,4),(4,2,NULL,NULL,'view',5,6),(5,2,NULL,NULL,'add',7,8),(6,2,NULL,NULL,'edit',9,10),(7,2,NULL,NULL,'delete',11,12),(8,NULL,'Articles',1,NULL,15,16);
 /*!40000 ALTER TABLE `acos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +91,7 @@ CREATE TABLE `aros` (
   PRIMARY KEY (`id`),
   KEY `lft` (`lft`,`rght`),
   KEY `alias` (`alias`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +100,7 @@ CREATE TABLE `aros` (
 
 LOCK TABLES `aros` WRITE;
 /*!40000 ALTER TABLE `aros` DISABLE KEYS */;
-INSERT INTO `aros` VALUES (1,NULL,'MyUsers',NULL,NULL,1,2),(2,NULL,'MyUsers','b8fbceb9-cec2-4d84-979d-95d4aff745b4',NULL,3,4),(3,NULL,'MyUsers','f70e7fc5-508f-4b0f-84ce-97436d570ba9',NULL,5,6),(4,NULL,'Roles','53ccd0fd-5788-4134-b767-32d84b0f7b0f',NULL,7,8),(5,NULL,'Roles','de776fc2-e59a-4f00-92e8-5ae0acf8f993',NULL,9,10),(6,NULL,'Roles','1b1be991-fd0b-43c6-853c-5faa4548b94c',NULL,11,12);
+INSERT INTO `aros` VALUES (1,NULL,'Roles','24c5646d-133d-496d-846b-af951ddc60f3',NULL,1,4),(2,NULL,'Roles','5b221256-0ca8-4021-b262-c6d279f192ad',NULL,5,6),(3,NULL,'Roles','25908824-15e7-4693-b340-238973f77b59',NULL,7,10),(4,1,'MyUsers','7c1ba036-f04b-4f7b-bc91-b468aa0b7c55',NULL,2,3),(5,3,'MyUsers','f512fcbe-af31-49ab-a5f6-94d25189dc78',NULL,8,9);
 /*!40000 ALTER TABLE `aros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +122,7 @@ CREATE TABLE `aros_acos` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `aro_id` (`aro_id`,`aco_id`),
   KEY `aco_id` (`aco_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +131,7 @@ CREATE TABLE `aros_acos` (
 
 LOCK TABLES `aros_acos` WRITE;
 /*!40000 ALTER TABLE `aros_acos` DISABLE KEYS */;
-INSERT INTO `aros_acos` VALUES (1,4,3,'1','1','1','1'),(2,4,2,'1','1','1','1'),(3,4,1,'1','1','1','1'),(4,2,3,'1','1','1','1');
+INSERT INTO `aros_acos` VALUES (1,1,5,'1','1','1','1'),(2,3,4,'1','1','1','1'),(3,1,3,'1','1','1','1'),(4,2,3,'1','1','1','1'),(5,3,3,'1','1','1','1');
 /*!40000 ALTER TABLE `aros_acos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,7 +153,7 @@ CREATE TABLE `articles` (
   PRIMARY KEY (`id`),
   KEY `user_key` (`user_id`),
   CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,6 +162,7 @@ CREATE TABLE `articles` (
 
 LOCK TABLES `articles` WRITE;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
+INSERT INTO `articles` VALUES (1,'35503b51-0117-4504-9391-09eb0c05ba4a','My first article','Hello!',1,'2018-01-16 17:24:24','2018-01-16 17:24:24');
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,7 +189,7 @@ CREATE TABLE `cake_d_c_users_phinxlog` (
 
 LOCK TABLES `cake_d_c_users_phinxlog` WRITE;
 /*!40000 ALTER TABLE `cake_d_c_users_phinxlog` DISABLE KEYS */;
-INSERT INTO `cake_d_c_users_phinxlog` VALUES (20150513201111,'Initial','2018-01-12 16:33:52','2018-01-12 16:33:52',0),(20161031101316,'AddSecretToUsers','2018-01-12 16:33:52','2018-01-12 16:33:52',0);
+INSERT INTO `cake_d_c_users_phinxlog` VALUES (20150513201111,'Initial','2018-01-16 16:56:35','2018-01-16 16:56:35',0),(20161031101316,'AddSecretToUsers','2018-01-16 16:56:35','2018-01-16 16:56:35',0);
 /*!40000 ALTER TABLE `cake_d_c_users_phinxlog` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,33 +215,8 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES ('1b1be991-fd0b-43c6-853c-5faa4548b94c','Reader','2018-01-12 17:12:18','2018-01-12 17:12:18'),('53ccd0fd-5788-4134-b767-32d84b0f7b0f','Author','2018-01-12 17:12:02','2018-01-12 17:12:02'),('de776fc2-e59a-4f00-92e8-5ae0acf8f993','Editor','2018-01-12 17:12:10','2018-01-12 17:12:10');
+INSERT INTO `roles` VALUES ('24c5646d-133d-496d-846b-af951ddc60f3','Author','2018-01-16 17:02:41','2018-01-16 17:02:41'),('25908824-15e7-4693-b340-238973f77b59','Reader','2018-01-16 17:02:59','2018-01-16 17:02:59'),('5b221256-0ca8-4021-b262-c6d279f192ad','Editor','2018-01-16 17:02:52','2018-01-16 17:02:52');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `roles_users`
---
-
-DROP TABLE IF EXISTS `roles_users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `roles_users` (
-  `role_id` char(36) NOT NULL,
-  `user_id` char(36) NOT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`role_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `roles_users`
---
-
-LOCK TABLES `roles_users` WRITE;
-/*!40000 ALTER TABLE `roles_users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `roles_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -304,10 +280,12 @@ CREATE TABLE `users` (
   `tos_date` datetime DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '0',
   `is_superuser` tinyint(1) NOT NULL DEFAULT '0',
-  `role` varchar(255) DEFAULT 'user',
+  `role_id` char(36) DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `role_id` (`role_id`),
+  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -317,7 +295,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('8bd238cc-7e83-475c-9899-0c90b838d066','superadmin','superadmin@example.com','$2y$10$fL2yYqFwOtSTNf4CitTDeOBFe7UCKRvpEcIn3tjUVPYk4NwNS7kTC',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,'superuser','2018-01-12 16:56:07','2018-01-12 16:56:07'),('b8fbceb9-cec2-4d84-979d-95d4aff745b4','alba','alba@example.com','$2y$10$mXIzXowcavWZQCOhCZV.leujvgJzkR01Uwl8nX9N8yRcRJpHp35Va','Alba','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-12 17:03:32','2018-01-12 17:03:32'),('f70e7fc5-508f-4b0f-84ce-97436d570ba9','bernard','bernard@example.com','$2y$10$iLNfTvO.EnOJLfMoy6.zZ.8bir7uOE.FSaS2tDffnkuDd43SWzZQm','Bernard','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,'user','2018-01-12 17:03:48','2018-01-12 17:03:48');
+INSERT INTO `users` VALUES ('35503b51-0117-4504-9391-09eb0c05ba4a','superadmin','superadmin@example.com','$2y$10$lrnq.pW9gP3y2Isz8APPse4VQ7Q/rHCbhKOJGW2ku73qmw7a.FGzm',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,NULL,'2018-01-16 17:01:16','2018-01-16 17:01:16'),('7c1ba036-f04b-4f7b-bc91-b468aa0b7c55','alba','alba@roger.pro','$2y$10$SonyqKT.rayeMir2AlwwQuE7XfWjk2QElT3LuzafDYZfvk78rU5Jq','','','',NULL,'',NULL,'',0,NULL,1,0,'24c5646d-133d-496d-846b-af951ddc60f3','2018-01-16 17:03:54','2018-01-16 17:03:54'),('f512fcbe-af31-49ab-a5f6-94d25189dc78','bernard','bernard@roger.pro','$2y$10$EVzePh71IwJdaSb9pOKUzeKse2q6OfQqvfsJZIB4wrKh1XnTFYGyi','','','',NULL,'',NULL,'',0,NULL,1,0,'25908824-15e7-4693-b340-238973f77b59','2018-01-16 17:04:11','2018-01-16 17:04:11');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -330,4 +308,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-15 11:20:41
+-- Dump completed on 2018-01-16 17:53:45

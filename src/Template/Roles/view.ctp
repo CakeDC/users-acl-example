@@ -55,7 +55,7 @@
                 <th scope="col"><?= __('Tos Date') ?></th>
                 <th scope="col"><?= __('Active') ?></th>
                 <th scope="col"><?= __('Is Superuser') ?></th>
-                <th scope="col"><?= __('Role') ?></th>
+                <th scope="col"><?= __('Role Id') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -77,7 +77,7 @@
                 <td><?= h($users->tos_date) ?></td>
                 <td><?= h($users->active) ?></td>
                 <td><?= h($users->is_superuser) ?></td>
-                <td><?= h($users->role) ?></td>
+                <td><?= h($users->role_id) ?></td>
                 <td><?= h($users->created) ?></td>
                 <td><?= h($users->modified) ?></td>
                 <td class="actions">

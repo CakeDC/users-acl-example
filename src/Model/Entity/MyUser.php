@@ -9,6 +9,6 @@ use CakeDC\Users\Model\Entity\User;
 class MyUser extends User
 {
     public function parentNode() {
-        return null;
+        return ['Roles' => ['id' => $this->role_id]];
     }
 }

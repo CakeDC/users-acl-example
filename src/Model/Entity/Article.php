@@ -7,14 +7,14 @@ use Cake\ORM\Entity;
  * Article Entity
  *
  * @property int $id
- * @property int $user_id
+ * @property string $user_id
  * @property string $title
  * @property string $body
  * @property bool $published
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
- * @property \App\Model\Entity\MyUser $user
+ * @property \CakeDC\Users\Model\Entity\User $user
  */
 class Article extends Entity
 {

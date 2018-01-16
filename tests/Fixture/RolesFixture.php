@@ -38,10 +38,10 @@ class RolesFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 'c7ae276f-95f5-4cc4-b105-4596f47ce64a',
+            'id' => '961a3c11-39f7-49e3-ad57-19708e6a4501',
             'name' => 'Lorem ipsum dolor sit amet',
-            'created' => '2018-01-08 19:15:54',
-            'modified' => '2018-01-08 19:15:54'
+            'created' => '2018-01-16 17:00:10',
+            'modified' => '2018-01-16 17:00:10'
         ],
     ];
 }
