@@ -1,9 +1,14 @@
 {
-    "name": "cakephp/app",
-    "description": "CakePHP skeleton app",
-    "homepage": "https://cakephp.org",
+    "name": "CakeDC/users-acl-example",
+    "description": "Example code for CakeDC/users and cakephp/acl plugins working together",
+    "homepage": "https://github.com/CakeDC/users-acl-example",
     "type": "project",
     "license": "MIT",
+    "keywords": [
+        "cakephp",
+        "users",
+        "acl"
+    ],
     "require": {
         "php": ">=5.6",
         "cakedc/users": "^6.0",
