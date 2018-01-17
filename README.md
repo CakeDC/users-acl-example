@@ -1,2 +1,38 @@
-# users-acl-example
-Example code for cakedc/users and cakephp/acl plugins working together
+CakeDC/users ACL example
+========================
+
+Example code for [CakeDC/users](https://github.com/CakeDC/users) and [cakephp/acl](https://github.com/cakephp/acl) plugins working together.
+
+Requirements
+------------
+
+* CakePHP ^3.5
+* PHP ^5.6
+* CakeDC/users ^6.0
+* cakephp/acl ^0.2
+
+Setup
+-------------
+
+* Run `git clone git@github.com:CakeDC/users-acl-example.git`
+* Create an empty database for the project
+* Run `composer install`
+* Run `bin/cake users add_superuser` from the app root directory to create an admin user and be able to log in
+
+Run
+---
+
+* Access the app URL
+* Check this [CakeDC article]() to know which steps has been done, what you can do with this app example and how you can extend it
+
+Support
+-------
+
+Commercial support is also available, [contact us](https://www.cakedc.com/contact) for more information.
+
+License
+-------
+
+Copyright 2018 Cake Development Corporation (CakeDC). All rights reserved.
+
+Licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php) License. Redistributions of the source code included in this repository must retain the copyright notice found in each file.
