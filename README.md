@@ -16,8 +16,8 @@ Setup
 
 * Run `git clone git@github.com:CakeDC/users-acl-example.git`
 * Create an empty database for the project
-* Configure the DB credentials in `config/app.php`
 * Run `composer install` from the app root directory
+* Configure the DB credentials in `config/app.php`
 * Run `bin/cake migrations migrate` to apply migrations and have the DB structure build
 
 Run
