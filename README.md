@@ -1,7 +1,7 @@
 CakeDC/users ACL example
 ========================
 
-Example code for [CakeDC/users](https://github.com/CakeDC/users) and [cakephp/acl](https://github.com/cakephp/acl) plugins working together.
+Example code for [CakeDC/users](https://github.com/CakeDC/users) and [cakephp/acl](https://github.com/cakephp/acl) plugins working together
 
 Requirements
 ------------
@@ -16,14 +16,15 @@ Setup
 
 * Run `git clone git@github.com:CakeDC/users-acl-example.git`
 * Create an empty database for the project
-* Run `composer install`
-* Run `bin/cake users add_superuser` from the app root directory to create an admin user and be able to log in
+* Configure the DB credentials in `config/app.php`
+* Run `composer install` from the app root directory
+* Run `bin/cake migrations migrate` to apply migrations and have the DB structure build
 
 Run
 ---
 
 * Access the app URL
-* Check this [CakeDC article]() to know which steps has been done, what you can do with this app example and how you can extend it
+* Check this [CakeDC article]() from the Testing section to know which steps has been done, what you can do with this app example and how you can extend it
 
 Support
 -------
