@@ -24,7 +24,7 @@ Run
 ---
 
 * Access the app URL
-* Check this [CakeDC article]() from the Testing section to know which steps has been done, what you can do with this app example and how you can extend it
+* Check this [CakeDC article](https://www.cakedc.com/roger_campanera/2018/01/26/integrating-users-and-acl-plugins-in-cakephp) from the Testing section to know which steps has been done, what you can do with this app example and how you can extend it
 
 Support
 -------
